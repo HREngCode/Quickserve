@@ -1,0 +1,43 @@
+{
+  "name": "MenuItem",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the menu item"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the item"
+    },
+    "price": {
+      "type": "number",
+      "description": "Price in dollars"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "hot_food",
+        "snacks",
+        "drinks",
+        "desserts",
+        "alcohol"
+      ],
+      "description": "Category of the item"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL to item image"
+    },
+    "available": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the item is currently available"
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "category"
+  ]
+}

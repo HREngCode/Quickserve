@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal app-level tweaks so the layout spacing works in dev */
+html, body, #root {
+  height: 100%;
+}
+body {
+  @apply bg-orange-50;
+}
+
+/* Project-level utility tokens (wrappers around Tailwind theme values) */
+.btn-primary {
+  /* layout utilities kept via @apply */
+  @apply rounded-lg px-4 py-2 transition-colors;
+  background-color: #f97316; /* brand 500 */
+  color: white;
+}
+.btn-primary:hover { background-color: #ea580c; /* brand 600 */ }
+
+.text-brand-600 { color: #ea580c; }
+
+.bg-brand-50 { background-color: #fff7ed; }
+
+/* spacing helpers (use sparingly) */
+.h-72 { height: 18rem; }
+.h-84 { height: 21rem; }
+.h-96 { height: 24rem; }
+
+/* Example component token for cards */
+.card-surface {
+  /* avoid @apply with custom background opacity token to prevent circular @apply */
+  background-color: rgba(255,255,255,0.8);
+  border: 1px solid #fed7aa; /* approximate orange-200 */
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
